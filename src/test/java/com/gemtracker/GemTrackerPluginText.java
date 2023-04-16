@@ -1,10 +1,9 @@
 package com.gemtracker;
 
-import com.gemtracker.GemTrackerPlugin;
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
-public class ExamplePluginTest
+public class GemTrackerPluginText
 {
 	public static void main(String[] args) throws Exception
 	{
