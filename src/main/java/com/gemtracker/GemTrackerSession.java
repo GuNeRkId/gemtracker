@@ -4,7 +4,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import net.runelite.api.ItemID;
+import net.runelite.api.gameval.ItemID;
 import net.runelite.client.game.ItemManager;
 
 import javax.inject.Inject;
@@ -48,14 +48,14 @@ public class GemTrackerSession
     @Setter
     public int loadsDone;
 
-    int profitDiamonds;
-    int profitRubies;
-    int profitEmeralds;
-    int profitSapphires;
-    int profitJades;
-    int profitOpals;
-    int profitRedTopaz;
-    int tProfit = -1;
+    long profitDiamonds;
+    long profitRubies;
+    long profitEmeralds;
+    long profitSapphires;
+    long profitJades;
+    long profitOpals;
+    long profitRedTopaz;
+    long tProfit = -1;
 
     @Getter
     public int currTotalGems;
@@ -130,7 +130,7 @@ public class GemTrackerSession
         return 0;
     }
 
-    public int calcTotalValue() {
+    public long calcTotalValue() {
 
         int totalGems = (diamondsFound + rubiesFound + emeraldsFound + sapphiresFound + jadesFound + opalsFound + redtopazFound);
 

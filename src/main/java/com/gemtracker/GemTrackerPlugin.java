@@ -7,8 +7,8 @@ import lombok.Getter;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
-import net.runelite.api.ItemID;
 import net.runelite.api.events.ChatMessage;
+import net.runelite.api.gameval.ItemID;
 import net.runelite.client.Notifier;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
@@ -20,7 +20,6 @@ import net.runelite.client.plugins.xptracker.XpTrackerPlugin;
 import net.runelite.client.ui.overlay.OverlayManager;
 
 import javax.inject.Inject;
-import java.util.Arrays;
 import java.util.Set;
 
 @PluginDescriptor(
@@ -131,7 +130,7 @@ public class GemTrackerPlugin extends Plugin
 
     public boolean checkInSvm()
     {
-        int[] currentMapRegions = client.getMapRegions();
+        int[] currentMapRegions = client.getTopLevelWorldView().getScene().getMapRegions();
 
         GameState gameState = client.getGameState();
         if (gameState == GameState.LOGGED_IN)
@@ -152,7 +151,7 @@ public class GemTrackerPlugin extends Plugin
 
     public boolean areMining()
     {
-        if (Arrays.asList(MINING_PICKS).contains(client.getLocalPlayer().getAnimation()))
+        if (client.getLocalPlayer() != null && MINING_PICKS.contains(client.getLocalPlayer().getAnimation()))
         {
             return true;
         }
