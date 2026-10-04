@@ -1,11 +1,11 @@
 package com.gemtracker;
 
 import com.google.common.collect.ImmutableSet;
-import net.runelite.api.AnimationID;
 import net.runelite.api.Client;
 import net.runelite.api.Skill;
+import net.runelite.api.gameval.AnimationID;
+import net.runelite.api.gameval.ItemID;
 import net.runelite.client.game.ItemManager;
-import net.runelite.api.ItemID;
 import net.runelite.client.plugins.xptracker.XpTrackerService;
 import net.runelite.client.ui.overlay.OverlayPanel;
 import net.runelite.client.ui.overlay.OverlayPosition;
@@ -26,20 +26,21 @@ class GemTrackerOverlay extends OverlayPanel {
 
 
     private static final Set<Integer> MINING_ANIMATION = ImmutableSet.of(
-            AnimationID.MINING_BRONZE_PICKAXE,
-            AnimationID.MINING_IRON_PICKAXE,
-            AnimationID.MINING_STEEL_PICKAXE,
-            AnimationID.MINING_BLACK_PICKAXE,
-            AnimationID.MINING_MITHRIL_PICKAXE,
-            AnimationID.MINING_ADAMANT_PICKAXE,
-            AnimationID.MINING_RUNE_PICKAXE,
-            AnimationID.MINING_GILDED_PICKAXE,
-            AnimationID.MINING_DRAGON_PICKAXE,
-            AnimationID.MINING_DRAGON_PICKAXE_OR,
-            AnimationID.MINING_DRAGON_PICKAXE_UPGRADED,
-            AnimationID.MINING_3A_PICKAXE,
-            AnimationID.MINING_INFERNAL_PICKAXE,
-            AnimationID.MINING_CRYSTAL_PICKAXE);
+            AnimationID.HUMAN_MINING_BRONZE_PICKAXE,
+            AnimationID.HUMAN_MINING_IRON_PICKAXE,
+            AnimationID.HUMAN_MINING_STEEL_PICKAXE,
+            AnimationID.HUMAN_MINING_BLACK_PICKAXE,
+            AnimationID.HUMAN_MINING_MITHRIL_PICKAXE,
+            AnimationID.HUMAN_MINING_ADAMANT_PICKAXE,
+            AnimationID.HUMAN_MINING_RUNE_PICKAXE,
+            AnimationID.HUMAN_MINING_GILDED_PICKAXE,
+            AnimationID.HUMAN_MINING_DRAGON_PICKAXE,
+            AnimationID.HUMAN_MINING_DRAGON_PICKAXE_PRETTY,
+            AnimationID.HUMAN_MINING_ZALCANO_PICKAXE,
+            AnimationID.HUMAN_MINING_3A_PICKAXE,
+            AnimationID.HUMAN_MINING_INFERNAL_PICKAXE,
+            AnimationID.HUMAN_MINING_CRYSTAL_PICKAXE,
+            AnimationID.HUMAN_MINING_TRAILBLAZER_PICKAXE_NO_INFERNAL);
 
     private final Client client;
     private final GemTrackerPlugin plugin;
